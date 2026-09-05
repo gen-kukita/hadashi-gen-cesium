@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Hadashi no Gen - Hiroshima (Base + 1945)</title>
+
+  <!-- CesiumJS (CDN) -->
+  <link href="https://cesium.com/downloads/cesiumjs/releases/1.120/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
+  <script src="https://cesium.com/downloads/cesiumjs/releases/1.120/Build/Cesium/Cesium.js"></script>
+
+  <style>
+    html, body, #cesiumContainer { width: 100%; height: 100%; margin: 0; padding: 0; overflow: hidden; }
+    .ui {
+      position: absolute; top: 10px; left: 10px; z-index: 100;
+      background: rgba(255,255,255,0.92); padding: 10px; border-radius: 8px;
+      font-family: sans-serif; width: 240px;
+    }
+    .ui button { width: 100%; padding: 8px; margin-bottom: 8px; }
+    .ui label { display:block; font-size: 12px; margin-bottom: 6px; }
+    .ui input[type="range"] { width: 100%; }
+#mangaStoryPanel {
+  
+  position: absolute;
+  left: 50%;
+  bottom: 90px;
+  transform: translateX(-50%);
+  z-index: 90;
+
+  width: min(720px, 65vw);
+  padding: 12px 18px;
+
+  background: rgba(25, 25, 25, 0.82);
+  color: white;
+  border-radius: 6px;
+
+  font-family: sans-serif;
+
+   box-sizing: border-box;
+  max-height: min(38vh, 420px);
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  pointer-events: auto;
+}
+
+#mangaStoryNumber {
+  font-size: 13px;
+  opacity: 0.75;
+  margin-bottom: 4px;
+}
+
+#mangaStoryTitle {
+  font-size: 19px;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+#mangaStoryDescription {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+  </style>
+</head>
+
+<body>
+  <div id="cesiumContainer"></div>
+
+  <div class="ui">
+    <button id="toggle1945">1945 航空写真 ON</button>
+    <button id="toggle1940">1940 古地図 OFF</button>
+
+    <label>透過度（航空写真）</label>
+    <input id="opacitySlider" type="range" min="0" max="1" step="0.05" value="0.7" 
+/>
+
+<label style="margin-top:10px;">透過度（古地図）</label>
+<input
+  id="oldMapOpacitySlider"
+  type="range"
+  min="0"
+  max="1"
+  step="0.05"
+  value="0.85"
+/>
+    <label style="margin-top:10px;">ジャンプ</label>
+    <button id="flyToHiroshima">広島（中心部）へ</button>
+    <button id="viewExplosionFromS04">
+  S04 被爆地点 → 爆発点
+</button>
+<hr style="margin: 12px 0;">
+
+<div id="mangaTimeline">
+
+  <div style="font-weight: bold; margin-bottom: 8px;">
+  Story Timeline
+</div>
+
+<div style="display: flex; gap: 6px; margin-bottom: 10px;">
+  <button id="mangaModeBtn" style="flex: 1;">Manga</button>
+  <button id="autobiographyModeBtn" style="flex: 1;">Autobiography</button>
+</div>
+
+<div style="display: flex; gap: 6px; margin-bottom: 10px;">
+  <button id="japaneseBtn" style="flex: 1;">日本語</button>
+  <button id="englishBtn" style="flex: 1;">English</button>
+</div>
+
+  <div id="mangaSceneTitle"
+       style="font-size: 14px; margin-bottom: 8px;">
+    Scene: —
+  </div>
+
+  <div style="display: flex; gap: 6px;">
+    <button id="mangaPrevBtn" style="flex: 1;">
+      ◀ Previous
+    </button>
+
+    <button id="mangaNextBtn" style="flex: 1;">
+      Next ▶
+    </button>
+  </div>
+
+</div>
+
+</div>     <!-- ★ class="ui" を閉じる -->
+  
+<!-- Manga Scene Story Panel -->
+<div id="mangaStoryPanel">
+  <div id="mangaStoryNumber">Scene — / —</div>
+  <div id="mangaStoryTitle">Scene title</div>
+  <div id="mangaStoryDescription">
+    Story description will appear here.
+  </div>
+</div>
+
+  <script>
+    // ★ここだけあなたの Cesium ion token に置き換え
+    Cesium.Ion.defaultAccessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJub25jZSI6Im9tRnJuNUdiam1QX0JWSlEiLCJqdGkiOiJmOTMwNDc4MS1jYTgyLTRmMDEtOWExYS0xYzk5ZTY5MmQzYmQiLCJpZCI6MTQ1MTY1LCJzdWIiOiJnZW5rIiwiaXNzIjoiaHR0cHM6Ly9hcGkuY2VzaXVtLmNvbSIsImF1ZCI6ImhhZGFzaGktZ2VuLWNlc2l1bS1wdWJsaWMiLCJpYXQiOjE3ODg2MDQ3MDN9.CQeCJbS8xSOUwd19qvtpwgrh6Om6ufx33BrxPiPzCSc";
+  </script>
+
+<script src="./script.js?v=20260829b"></script>
+</body>
+</html>
