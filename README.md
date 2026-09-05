@@ -8,10 +8,10 @@ The project uses CesiumJS, QGIS, historical maps, and aerial imagery to trace on
 
 ## Current Status
 
-- CesiumJS prototype: preparing for public access
+- CesiumJS prototype: [Live Prototype](https://gen-kukita.github.io/hadashi-gen-cesium/)
 - Presentation PDF: publication permission under confirmation
-- 1940 historical map: web distribution permission under confirmation
-- Source code: being prepared for publication
+- 1940 historical map: temporarily unavailable while web distribution permission is being confirmed
+- Source code: publicly available in this repository
 
 ## About This Project
 
