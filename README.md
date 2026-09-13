@@ -21,9 +21,10 @@ This is an independent personal project by Gen Kukita. It is not an official pro
 
 ## Historical Map
 
-The 1940 historical map used in this application is based on *大廣島市街地圖* (1940), held by the International Research Center for Japanese Studies (Nichibunken). Its online publication in this project has been confirmed with Nichibunken.
+The 1940 historical map used in this application is based on *大廣島市街地圖 : 最新* (1940), held by the International Research Center for Japanese Studies (Nichibunken). See the [Nichibunken collection record](https://lapis.nichibun.ac.jp/chizu/map_detail.php?id=002445658). Its online publication in this project was confirmed with Nichibunken.
 
-本アプリで使用している1940年の古地図は、国際日本文化研究センター（日文研）所蔵の『大廣島市街地圖』（1940年）を利用しています。本プロジェクトにおけるウェブ公開について、日文研に確認済みです。
+本アプリで使用している1940年の古地図は、国際日本文化研究センター（日文研）所蔵の『大廣島市街地圖 : 最新』を利用しています。[日文研の所蔵資料ページ](https://lapis.nichibun.ac.jp/chizu/map_detail.php?id=002445658)を参照してください。本プロジェクトでのウェブ公開については、日文研に確認済みです。
+
 
 ## About This Project
 
