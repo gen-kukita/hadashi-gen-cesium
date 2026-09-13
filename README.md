@@ -25,6 +25,11 @@ The 1940 historical map used in this application is based on *大廣島市街地
 
 本アプリで使用している1940年の古地図は、国際日本文化研究センター（日文研）所蔵の『大廣島市街地圖 : 最新』を利用しています。[日文研の所蔵資料ページ](https://lapis.nichibun.ac.jp/chizu/map_detail.php?id=002445658)を参照してください。本プロジェクトでのウェブ公開については、日文研に確認済みです。
 
+## Aerial Imagery
+
+The 1945–1950 aerial imagery layer uses the Geospatial Information Authority of Japan (GSI) tile `ort_USA10`, loaded directly from the [GSI Tiles catalog](https://maps.gsi.go.jp/development/ichiran.html). The attribution “GSI Japan” is also provided in the application's imagery credits. This project has not established which individual photograph or exact acquisition date corresponds to each displayed tile.
+
+1945～1950年の航空写真レイヤーには、国土地理院の[地理院タイル `ort_USA10`](https://maps.gsi.go.jp/development/ichiran.html)を使用し、国土地理院のサーバーから直接読み込んでいます。アプリの画像クレジットにも「GSI Japan」を設定しています。表示される各タイルと個別の原写真・正確な撮影日との対応は、本プロジェクトでは特定していません。
 
 ## About This Project
 
