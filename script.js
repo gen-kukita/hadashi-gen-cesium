@@ -386,8 +386,8 @@ viewer.entities.add({
 {
   id: "S06",
   title: "似島検疫所",
-  lat: 34.311738,
-  lon: 132.44686,
+  lat: 34.308504,
+  lon: 132.440129,
   source: "漫画",
   confidence: "Medium"
 },
@@ -417,7 +417,7 @@ viewer.entities.add({
 },
 {
   id: "S10",
-  title: "昭の学童疎開先（候補地域：山県郡吉坂村吉木）",
+title: "神崎国民学校の集団疎開先候補（吉木）／昭の分宿先未特定",
   lat: 34.621812,
   lon: 132.415227,
   source: "漫画・自伝・史料",
@@ -449,7 +449,7 @@ viewer.entities.add({
 },
 {
   id: "S14",
-  title: "厳島神社 大鳥居",
+title: "宮島（父との写生・海水療法／具体的地点未特定）",
   lat: 34.2973,
   lon: 132.3182,
   source: "自伝",
@@ -457,10 +457,10 @@ viewer.entities.add({
 },
 {
   id: "S15",
-  title: "米兵捕虜（中国憲兵隊司令部）／原爆犠牲米軍人慰霊銘板",
-  lat: 34.395131,
-  lon: 132.4572238,
-  source: "漫画",
+  title: "原爆犠牲米軍人慰霊銘板",
+  lat: 34.395242,
+  lon: 132.459627,
+  source: "慰霊銘板（位置確認）",
   confidence: "High"
 },
 {
@@ -625,11 +625,10 @@ const mangaStories = [
   },
 
   {
-    titleJa: "疎開先の寺へ",
-    titleEn: "To the Evacuation Temple",
-    descriptionJa: "昭たち疎開児童は広島を離れ、島根県との県境近くにある疎開先の寺へ向かう。",
-    descriptionEn: "Akira and the other evacuated schoolchildren leave Hiroshima for a temple near the border with Shimane Prefecture."
-  },
+    titleJa: "集団疎開先の候補地域・吉木",
+titleEn: "Yoshiki — A Candidate Evacuation Area",
+descriptionJa: "神崎国民学校の児童は吉坂村・本地村・南方村へ集団疎開した。この点は吉木の候補地域を示すもので、昭本人が滞在した寺の位置は未特定。",
+descriptionEn: "Children from Kanzaki National School were evacuated to Yoshisaka, Hongi, and Minamikata villages. This point marks Yoshiki as a candidate area; the temple where Akira stayed has not been identified."  },
 
   {
     titleJa: "大吉、特高に逮捕される",
@@ -819,11 +818,10 @@ const autobiographyStories = [
   descriptionEn: "Amid severe food shortages, Keiji caught and ate grasshoppers at the Eba firing range and searched for dumplings at an eatery in Eba. He also retained a vivid memory of the sugarcane his father bought him at a festival at Gokoku Shrine."
 },
 {
-  titleJa: "父との厳島での記憶",
-  titleEn: "Memories of Itsukushima with His Father",
-  descriptionJa: "栄養失調によるできものに苦しんだ頃、父と厳島へ行き、海水につかって治そうとした。父と写生をした記憶も残っている。",
-  descriptionEn: "When Keiji suffered from sores caused by malnutrition, he went to Itsukushima with his father and immersed himself in seawater in an attempt to heal them. He also remembered sketching there with his father."
-},
+  titleJa: "宮島での父との記憶",
+titleEn: "Memories of Miyajima with His Father",
+descriptionJa: "父と宮島を訪れ、写生をし、栄養失調によるできものを海水につけた記憶。島内での具体的な場所は未特定で、地図上の点は暫定的な代表地点。",
+descriptionEn: "Keiji recalled visiting Miyajima with his father to sketch and immersing sores caused by malnutrition in seawater. The specific locations on the island are unknown; the map point is provisional.",},
 {
   titleJa: "長兄の学徒動員",
   titleEn: "His Eldest Brother's Student Mobilization",
@@ -924,10 +922,11 @@ function getLocationById(id) {
 function goToMangaScene(index) {
   currentStoryMode = "manga";
   // 範囲外に出ないようにする
+
   if (index < 0 || index >= mangaTimeline.length) {
     return;
   }
-
+  document.getElementById("mangaStoryPanel").style.display = "block";
   mangaSceneIndex = index;
 
 const locationId = mangaTimeline[mangaSceneIndex];
@@ -1004,6 +1003,17 @@ if (!loc) {
       ),
       duration: 1.5
     });
+
+if (locationId === "S08") {
+  sceneTitle.textContent =
+    currentLanguage === "en"
+      ? `Manga Scene ${mangaSceneIndex + 1} / ${mangaTimeline.length} — S08 Eba worksite (location not identified)`
+      : `Manga Scene ${mangaSceneIndex + 1} / ${mangaTimeline.length} — S08 江波バイト先（所在地未特定）`;
+
+  const route = viewer.entities.getById("manga_scene10_route");
+  if (route) route.show = false;
+  return;
+}
 
   // Scene 22：友子の死
   // 正確な地点を断定せず、江波一帯を広く表示する
@@ -1257,7 +1267,7 @@ sceneTitle.textContent =
 // ========================================
 // Autobiography Story Panel を現在Sceneに同期
 // ========================================
-
+document.getElementById("mangaStoryPanel").style.display = "block";
 document.getElementById("mangaStoryNumber").textContent =
   `Autobiography ${autobiographySceneIndex + 1} / ${autobiographyTimeline.length}`;
 
