@@ -15,7 +15,7 @@ This is an independent personal project by Gen Kukita. It is not an official pro
 ## Current Status
 
 - CesiumJS prototype: [Live Prototype](https://gen-kukita.github.io/hadashi-gen-cesium/)
-- Presentation PDF: publication permission under confirmation
+- Presentation PDF: [FOSS4G Hiroshima 2026 presentation deck](https://talks.osgeo.org/media/foss4g-2026/submissions/AL9L3W/resources/Cesium_SeminarDeck02_for_FOSS4G_Hir_5gumFLi.pdf)
 - 1940 historical map: available online following confirmation with the International Research Center for Japanese Studies (Nichibunken)
 - Source code: publicly available in this repository
 
@@ -35,12 +35,24 @@ The 1945–1950 aerial imagery layer uses the Geospatial Information Authority o
 
 This is an unfinished interpretive mapping project created by one reader of *Barefoot Gen*. It is not intended as a complete reconstruction of the manga, Keiji Nakazawa’s life, or the experience of atomic-bomb survivors.
 
-Locations are classified as:
+Location information is evaluated along two separate axes:
+
+**Evidence confidence**
 
 - High
 - Medium
-- Estimated
+- Low
 - Unknown
+
+**Spatial precision**
+
+- Exact
+- Approximate
+- General area
+- Provisional
+- Unknown
+
+Evidence confidence indicates how strongly the available sources support the identification of a place. Spatial precision indicates how precisely that place can be positioned on the map.
 
 ## Contact
 
