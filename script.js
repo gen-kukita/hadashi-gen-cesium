@@ -11,6 +11,13 @@
           selectionIndicator: true
         });
 
+Cesium.createWorldTerrainAsync()
+  .then((terrainProvider) => {
+    viewer.terrainProvider = terrainProvider;
+  })
+  .catch((error) => {
+    console.error("Cesium World Terrain could not be loaded:", error);
+  });
 
         // === 爆心地（島病院上空付近）: 正確座標（まずはこれを基準点にする） ===
       const hypocenterLon = 132.4536;
@@ -1620,16 +1627,18 @@ const slantDistance = Cesium.Cartesian3.distance(
       color: pointColor,
       outlineColor: Cesium.Color.BLACK,
       outlineWidth: 2,
-      disableDepthTestDistance: Number.POSITIVE_INFINITY
+      heightReference: Cesium.HeightReference.CLAMP_TO_GROUND
     },
 
     label: {
-      text: loc.id,
-      font: "16px sans-serif",
-      pixelOffset: new Cesium.Cartesian2(0, -22),
-      showBackground: true,
-      backgroundColor: Cesium.Color.BLACK.withAlpha(0.6)
-    },
+  text: loc.id,
+  font: "16px sans-serif",
+  pixelOffset: new Cesium.Cartesian2(0, -22),
+  showBackground: true,
+  backgroundColor: Cesium.Color.BLACK.withAlpha(0.6),
+  heightReference: Cesium.HeightReference.CLAMP_TO_GROUND,
+  disableDepthTestDistance: Number.POSITIVE_INFINITY
+},  
 
     description: `
   <h3>${loc.id} ${loc.title}</h3>
@@ -1793,7 +1802,7 @@ viewer.entities.add({
         color: Cesium.Color.YELLOW,
         outlineColor: Cesium.Color.BLACK,
         outlineWidth: 2,
-        disableDepthTestDistance: Number.POSITIVE_INFINITY
+
       },
       label: {
         text: `${index + 1}`,
