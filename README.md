@@ -4,6 +4,8 @@
 
 **[アプリを開く / Open the prototype](https://gen-kukita.github.io/hadashi-gen-cesium/)**
 
+![古地図を重ねた広島の3D地図で『はだしのゲン』の場面をたどるアプリ画面](assets/hiroshima-map-preview.png)
+
 ## Tracing My Memory of Reading *Barefoot Gen* with Open Geospatial Tools
 
 This repository is being prepared as the project archive for a presentation delivered at FOSS4G Hiroshima 2026 on September 2, 2026.
