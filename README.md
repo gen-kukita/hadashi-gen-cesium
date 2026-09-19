@@ -1,6 +1,6 @@
 # Mapping the Distance to History
 
-『はだしのゲン』を読んだ一人の読者の記憶を、広島の地図上でたどるインタラクティブなアプリです。漫画の場面と中沢啓治の自伝を別々のタイムラインでたどり、1940年の古地図や戦後の航空写真を重ねて、物語に登場する場所と距離を考えます。被爆体験そのものを再現するものではなく、読書経験から歴史と土地への接近を試みる個人制作のプロジェクトです。
+子どもの頃に『はだしのゲン』を読んだ私の記憶を、広島の地図上でたどるインタラクティブなアプリです。漫画の場面と中沢啓治の自伝を別々のタイムラインでたどり、1940年の古地図や戦後の航空写真を重ねて、物語に登場する場所と距離を考えます。被爆体験そのものを再現するものではなく、読書経験から歴史と土地への接近を試みる個人制作のプロジェクトです。
 
 **[アプリを開く / Open the prototype](https://gen-kukita.github.io/hadashi-gen-cesium/)**
 
@@ -8,7 +8,7 @@
 
 ## Tracing My Memory of Reading *Barefoot Gen* with Open Geospatial Tools
 
-This repository is being prepared as the project archive for a presentation delivered at FOSS4G Hiroshima 2026 on September 2, 2026.
+This project was presented at FOSS4G Hiroshima 2026 on September 2, 2026. The interactive map traces my memory of reading Barefoot Gen through places in Hiroshima, alongside scenes from the manga and Keiji Nakazawa’s autobiography. Visitors can follow separate timelines over a 1940 historical map and postwar aerial imagery. This is a personal interpretation of a reading experience, not a reconstruction of survivors’ experiences.
 
 The project uses CesiumJS, QGIS, historical maps, and aerial imagery to trace one reader’s memory of reading *Barefoot Gen* and to explore questions of place, distance, movement, narrative, and history.
 
